@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition template="/templates/start.xhtml">
+    <ui:define name="title">
+        Registration IS-21
+    </ui:define>
+    <ui:define name="content">
+        <center>
+            <h:form>
+                <h2> Registration
+                </h2>
+                <center><h:panelGrid styleClass="table" columns="3">
+                    <f:event type="postValidate" listener="#{registrationMB.validatePassword}"/>
+                    <h:outputText value="First name: "></h:outputText>
+                    <h:inputText id="firstName" value="#{registrationMB.firstName}" required="true" requiredMessage="Please enter First name"></h:inputText>
+                    <h:message for="firstName" style="color:red" />
+
+                    <h:outputText value="Last name: "></h:outputText>
+                    <h:inputText id="lastName" value="#{registrationMB.lastName}" required="true" requiredMessage="Please enter Last name"></h:inputText>
+                    <h:message for="lastName" style="color: red"/>
+
+                    <h:outputText value="Email: "></h:outputText>
+                    <h:inputText id="email" value="#{registrationMB.email}" required="true">
+                        <f:validator validatorId="emailValidator" />
+                        <f:validator validatorId="emailUniqueValidator"/>
+                        <f:ajax event="keyup" render="messageEmail" />
+                    </h:inputText>
+                    <h:message for="email" style="color: red" id="messageEmail"/>
+
+                    <h:outputText value="Password: "></h:outputText>
+
+                    <h:inputSecret id="password" value="#{registrationMB.password}" required="true">
+                        <f:ajax event="blur" execute="password" render="messagePassword" />
+                    </h:inputSecret>
+                    <h:message for="password" style="color: red" id="messagePassword"/>
+
+                    <h:outputText value="Confirm password: "></h:outputText>
+                    <h:inputSecret id="confirmpassword" value="#{registrationMB.confirmpassword}" required="true">
+                        <f:ajax event="blur" execute="password" render="messageConfirmPassword" />
+
+
+                    </h:inputSecret>
+                    <h:message for="confirmpassword" style="color: red" id="messageConfirmPassword"/>
+
+                    <h:commandButton styleClass="button" type="submit" value="Submit" action="#{registrationMB.registration()}"></h:commandButton>
+                </h:panelGrid> </center>
+            </h:form>
+        </center>
+
+    </ui:define>
+</ui:composition>
+</html>
