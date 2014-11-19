@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/templates/page.xhtml">
+    <ui:define name="title">
+        IS-21 News
+        <f:metadata>
+            <f:viewParam name="news" value="#{newsMB.id}"/>
+            <f:event type="preRenderView" listener="#{newsMB.init}"/>
+        </f:metadata>
+    </ui:define>
+    <ui:define name="content">
+       <h:form>
+               <div class="topic">
+                   <h:panelGrid columns="1">
+                       <h:outputLabel value="#{newsMB.newInfo.date}" styleClass="messageTime"/>
+                       <h:outputLabel value="#{newsMB.newInfo.theme}"  styleClass="topicHeader"/>
+                       <h:outputLabel value="#{newsMB.newInfo.content}"/>
+                   </h:panelGrid>
+               </div>
+
+           <h:panelGrid columns="2">
+               <h:inputTextarea cols="85" rows="3" value="#{newsMB.message.content}" label="message"></h:inputTextarea>
+               <h:commandButton styleClass="button" value="send" action="#{newsMB.sendMessage(userMB.user)}"></h:commandButton>
+           </h:panelGrid>
+           <hr/>
+           <ui:repeat  value="#{newsMB.newInfo.messages}" var="m" id="coments">
+               <div class="message">
+                   <h:outputLabel styleClass="messageSenderName" value="#{m.user.firstName} #{m.user.lastName}"/>
+                   <h:outputLabel styleClass="messageTime" value="#{m.date} "/>
+                   <h:outputLabel styleClass="messageText" value="#{m.content}"/>
+               </div>
+           </ui:repeat>
+       </h:form>
+
+
+    </ui:define>
+
+
+</ui:composition>
+</html>
+

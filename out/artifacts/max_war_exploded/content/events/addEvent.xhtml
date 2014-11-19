@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/page.xhtml">
+    <ui:define name="title">
+        IS-21 Events
+        <f:metadata>
+            <f:viewParam name="event" value="#{eventsMB.id}"/>
+            <f:event type="preRenderView" listener="#{eventsMB.init}"/>
+        </f:metadata>
+    </ui:define>
+    <ui:define name="content">
+        <h:form>  <h:messages globalOnly="true"/>
+            <h:panelGrid columns="1">
+                <h:outputLabel value="Name of Event:" styleClass="topicHeader"/>
+                <h:inputText cols="85" value="#{eventsMB.event.header}" required="true"/>
+                <h:outputLabel value="Description: " styleClass="topicHeader"/>
+                <h:inputTextarea cols="85" rows="20" value="#{eventsMB.event.info}" required="true"></h:inputTextarea>
+               <!-- <h:outputLabel value="Date: " styleClass="topicHeader"/>
+                <h:inputTextarea cols="85" rows="2" value="#{eventsMB.event.date}" required="true">
+                    <f:convertDateTime type="date" dateType="short" />
+                </h:inputTextarea>-->
+            </h:panelGrid>
+            <h:commandButton value="Add event" action="#{eventsMB.saveEvent()}" styleClass="button"/>
+        </h:form>
+    </ui:define>
+
+
+</ui:composition>
+</html>
+

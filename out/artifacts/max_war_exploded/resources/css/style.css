@@ -1,0 +1,222 @@
+/*
+Design by Free Responsive Templates
+http://www.free-responsive-templates.com
+Released for free under a Creative Commons Attribution 3.0 Unported License (http://creativecommons.org/licenses/by/3.0/)
+Coder: lsa, free.responsive.templates@gmail.com
+Created: August 23, 2012
+*/
+@font-face {
+    font-family: 'Fredericka the Great';
+    src: url("../ttf/FrederickatheGreat-Regular.ttf");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: 'Cutive', serif;
+	font-size: 100%;
+
+	margin: 0;
+	padding: 0;
+    color: #363636;
+	text-shadow: 0 0px, 1px 1px #ffffff;
+}
+h1 {
+	color: #363636;
+	font-size: 3.428571428571429em;
+	font-family: 'Fredericka the Great', cursive;
+	font-weight: normal;
+}
+h2, h3 {
+	color: #363636;
+	font-size: 18px;
+	font-family: 'Stoke', serif;
+	font-weight: normal;
+	margin:5px 0;
+}
+h3 {
+    font-size: 18px;
+	border-bottom: 1px solid #858585;
+	padding-bottom:5px;
+	margin:5px 0;
+}
+
+a img { 
+	border: none;
+}
+a {
+	color: #d34e16;
+	text-decoration: none; 
+}
+a:hover, a:active, a:focus { 
+	color: #d34e16;
+	text-decoration: none;
+}
+h1 a {
+	color:#363636;
+	float:left;
+	padding:0px 0;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	width: auto;
+}
+p {
+	line-height: 140%;
+}
+hr {
+	margin:5px 0 15px 0;
+	background:#858585;
+	height:1px;
+	border:0;
+}
+
+.wrapper {
+	width: 1000px; /* 960px/1024px  */
+	margin: 0 auto
+}
+.mainContent {
+	float: right;
+	width: 72.91666666666667%; /* 700px/960px  */
+    min-height: 2000px;
+}
+.sidebar {
+	margin:0 75% 0 0 ; /* 720px/960px  */
+}
+.sidebarFirst {
+	border-top:1px solid #858585;
+}
+.sidebar li {
+	list-style:none;
+	width:100%;
+	border-right:1px solid #858585;
+	border-bottom:1px solid #858585;
+	border-left:1px solid #858585;
+}
+.sidebar li a {
+	display:block;
+	padding:7px 10px 7px 17px;
+}
+.sidebar li a:hover {
+	color:#363636;
+}
+.footer {
+	background: #f3f3f3;
+	margin-top:20px;
+}
+.footer ul {
+	padding: 20px 0;
+	text-align:center;
+}
+.footer li {
+	display: inline;
+	padding: 0 1%;
+}
+.footer li span {
+	color: #363636;
+}
+.footer a {
+	text-decoration: underline;
+}
+.clearfloat { 
+	clear: both;
+	height: 0;
+	line-height: 0px;
+}
+/**************************/
+/*********************************Begin main menu****************************************/
+/**************************/
+.header{
+	float:right;
+	padding-top:20px;
+}
+.header li {
+	display: inline;
+	list-style: none;
+	padding:1px;
+}
+.header li a {
+	font-size:1.285714285714286em;
+	display:inline;
+	color:#ffffff;
+	text-shadow: none;
+	background:gray;
+	padding:4px 7px;
+}
+.header li a:hover {
+	background:#d34e16;
+	color:#ffffff;
+}
+.header #active a {
+	background:#d34e16;
+	color:#ffffff;
+}
+.button{
+    height:25px;
+    font-size: 15px;
+    color: #ffffff;
+    text-shadow: none;
+    background: gray;
+    padding: 1px 7px;
+}
+.table
+{
+    font-size:20px;
+}
+
+label.topicHeader{
+    color: #d34e16;
+    font-size: 18px;
+}
+
+.message{
+    width: 728px;
+    height: auto;
+    display: block;
+}
+label.messageText{
+    width: 100%;
+    float: left;
+    text-align: left;
+    margin-left: 35px;
+    white-space: pre;
+    word-wrap: break-word;
+}
+label.messageTime{
+    float: right;
+    font-size: 11px;
+    color: darkslategray;
+}
+label.messageSenderName{
+    float: left;
+    text-align: left;
+    font-size: 15px;
+    width: 50%;
+    color: dodgerblue;
+}
+a.messageSenderName{
+    float: right;
+    text-align: left;
+    font-size: 15px;
+    color: dodgerblue;
+    margin: 4px;
+}
+
+.topic {
+        text-align: left;
+        background: #f3f3f3;
+        margin: 1px;
+        padding: 20px;
+}
+.topic ul {
+    list-style-type: none;
+}
+table{
+    width:100%;
+}
+/**************************/
+/*********************************End main menu****************************************/
+/**************************/
